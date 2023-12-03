@@ -1,0 +1,15 @@
+<mat-toolbar color="pink">
+  <span><a >Ecom App</a></span>
+  <ul>
+
+    <li *ngIf="isAuthenticated">
+      <button mat-raised-button routerLink="/update-pass">Update Password</button>
+      
+    </li>
+    <li *ngIf="isAuthenticated">
+      <button mat-raised-button (click)="onlogout()">Logout</button>
+    </li>
+  </ul>
+
+
+</mat-toolbar>

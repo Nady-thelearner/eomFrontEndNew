@@ -1,0 +1,97 @@
+<mat-card class="create-card" *ngIf="!storePresent">
+  <form (submit)="onSubmit()" [formGroup]="form">
+    <button
+      mat-stroked-button
+      type="button"
+      class="image-picker-button"
+      (click)="filePicker.click()"
+    >
+      Pick Image
+    </button>
+    <input
+      type="file"
+      #filePicker
+      class="hidden-file-input"
+      (change)="onImagePicked($event)"
+    />
+    <div class="image-preview">
+      <img [src]="imagePreview" alt="test" *ngIf="imagePreview" />
+    </div>
+    <!-- && form.get('image').valid" -->
+    <mat-form-field class="form-field">
+      <input
+        type="text"
+        matInput
+        placeholder="Business Email"
+        formControlName="businessEmail"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="form-field">
+      <input
+        type="text"
+        matInput
+        placeholder="Adderess"
+        formControlName="adderess"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="form-field">
+      <input type="text" matInput placeholder="Pin" formControlName="pin" />
+    </mat-form-field>
+
+    <mat-form-field class="form-field">
+      <input
+        type="text"
+        matInput
+        placeholder="Latitude"
+        formControlName="latitude"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="form-field">
+      <input
+        type="text"
+        matInput
+        placeholder="Longitude"
+        formControlName="longitude"
+      />
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="accent"
+      class="submit-button"
+      type="submit"
+    >
+      Create Store
+    </button>
+  </form>
+</mat-card>
+
+<mat-card class="example-card" *ngIf="storePresent">
+  <h3>Welocme to your Store.</h3>
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{ storeData.data.address }}</mat-card-title>
+    <mat-card-subtitle>{{ storeData.data.business_email }}</mat-card-subtitle>
+  </mat-card-header>
+  <img [src]='storeData.data.logo' alt="tes" />
+  <mat-card-content>
+    <p>
+      {{ storeData.message }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <p>
+      <span>Latitude</span>
+      {{ storeData.data.location.coordinates[0] }}
+    </p>
+    <br />
+    <p>
+      <span>Longitude</span>
+      {{ storeData.data.location.coordinates[1] }}
+    </p>
+  </mat-card-actions>
+  <button mat-fab type="button" routerLink="/add-product">Add Product</button>
+</mat-card>

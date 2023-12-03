@@ -1,0 +1,65 @@
+mat-card {
+  width: 100%;
+}
+
+mat-form-field,
+textarea {
+  width: 100%;
+}
+
+.hidden-file-input {
+  display: none;
+}
+
+.image-preview {
+  height: 9rem;
+  margin: 1rem 0;
+}
+
+.image-preview img {
+  height: 100%;
+}
+
+.image-preview {
+  margin-top: 10px;
+}
+
+.example-card{
+  width: 800px;
+  margin: auto;
+  margin-top: 7rem;
+  padding: 20px;
+
+}
+
+.create-card {
+  width: 800px;
+  margin: auto;
+  margin-top: 7rem;
+  padding: 20px;
+}
+
+.form-field {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.submit-button {
+  width: 40%;
+  margin-top: 15px;
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+}
+
+
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
