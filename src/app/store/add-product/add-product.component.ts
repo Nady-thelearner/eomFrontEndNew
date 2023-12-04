@@ -27,11 +27,7 @@ export class AddProductComponent implements OnInit {
   subCategoryList: string[] = [];
 
   ngOnInit(): void {
-    const vendor_id1 = this.userSF.getUserID().userId;
-    console.log('vendor Id on ng it ', vendor_id1);
-    this.productSF.getProduct(vendor_id1).subscribe((data) => {
-      console.log('productsss', data);
-    });
+
     this.form = new FormGroup({
       categoryId: new FormControl(null, { validators: [Validators.required] }),
       subCategoryId: new FormControl(null, {
